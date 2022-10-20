@@ -3,11 +3,9 @@
 void print_buffer(char buffer[], int *buff_ind);
 
 /**
- * _printf - produces output according to a format
- *
- *   * @format: format string containing the characters and the specifier
- *
- *       * Return: Printed chars
+ * _printf - Printf function
+ * @format: format string containing the characters and the specifier
+ * Return: Printed chars
  */
 
 int _printf(const char *format, ...)
