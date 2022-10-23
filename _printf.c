@@ -1,4 +1,12 @@
 #include "main.h"
+#include <stdio.h>
+
+/**
+ * _printf - prints to the output
+ * @format: pointer
+ *
+ * Return: input len
+ */
 
 void print_buffer(char buffer[], int *buff_ind);
 
@@ -7,8 +15,19 @@ void print_buffer(char buffer[], int *buff_ind);
  * @format: format.
  * Return: Printed chars.
  */
+
+
 int _printf(const char *format, ...)
 {
+	va_list arg;
+	int done;
+
+	va_start(arg, format);
+
+	done = vfprintf(stdout, format, arg);
+	va_end(arg);
+
+	return (done);
 	int i, printed = 0, printed_chars = 0;
 	int flags, width, precision, size, buff_ind = 0;
 	va_list list;
@@ -62,5 +81,4 @@ void print_buffer(char buffer[], int *buff_ind)
 	if (*buff_ind > 0)
 		write(1, &buffer[0], *buff_ind);
 
-	*buff_ind = 0;
-}
+	*buff_ind = 0;wq}
